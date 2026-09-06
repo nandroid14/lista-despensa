@@ -91,7 +91,8 @@
     var r = leer('ld_resumen'); var box = document.getElementById('listas');
     if (!r || !r.listas) return;
     box.innerHTML = r.listas.map(function (l) {
-      var h = '<h2><span class="dot ' + (l.tienda === 'semanal' ? 'heb' : 'costco') + '"></span>' + esc(l.nombre) + '</h2>';
+      var h = '<h2><span class="dot" style="background:' + esc(/^#[0-9a-fA-F]{6}
+.test(l.color || '') ? l.color : '#b8503f') + '"></span>' + esc(l.nombre) + '</h2>';
       if (!l.items.length) return h + '<div class="vacio">Lista vacía.</div>';
       var cat = '';
       l.items.sort(function (a, b) { return (a.listo ? 1 : 0) - (b.listo ? 1 : 0) || String(a.categoria).localeCompare(String(b.categoria)); });
