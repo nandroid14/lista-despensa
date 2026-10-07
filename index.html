@@ -13,41 +13,28 @@
   iframe { border: 0; width: 100%; height: 100%; display: block; }
   #offline {
     position: fixed; inset: 0; display: none; flex-direction: column; overflow-y: auto;
-    padding: max(20px, env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom));
+    padding: max(28px, env(safe-area-inset-top)) 22px 40px;
     background: linear-gradient(140deg, #0f172a, #1e293b); color: #ffffff;
     font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
   }
   #offline.on { display: flex; }
-  #offline .top { text-align: center; margin-bottom: 14px; }
-  #offline .ico { font-size: 38px; }
-  #offline h1 { font-size: 21px; font-weight: 800; margin: 4px 0 4px; letter-spacing: -0.02em; }
-  #offline p { margin: 0 auto; max-width: 30em; color: rgba(255,255,255,0.74); font-size: 13.5px; }
-  #offline .ult { color: #fbbf24; font-size: 12.5px; font-weight: 700; margin-top: 6px; }
-  #retry { background: #fbbf24; color: #1a1208; border: 0; border-radius: 999px; padding: 11px 26px; font-size: 15px; font-weight: 800; font-family: inherit; margin: 10px auto 0; display: block; }
-  #retry:disabled { opacity: 0.6; }
-  .pend { background: rgba(251,191,36,0.14); border: 1px solid rgba(251,191,36,0.4); color: #fbbf24; border-radius: 14px; padding: 10px 14px; font-size: 13px; font-weight: 700; margin-bottom: 14px; text-align: center; }
-  .pend[hidden] { display: none; }
-  section { max-width: 34em; width: 100%; margin: 0 auto 22px; }
-  h2 { font-size: 16px; margin: 0 0 10px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-  h2 .dot { width: 12px; height: 12px; border-radius: 4px; display: inline-block; flex: none; }
-  h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.12em; color: #9aa4b8; margin: 14px 0 6px; font-weight: 700; }
-  .row { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 8px 8px 8px 10px; margin-bottom: 7px; }
-  .row .cb { width: 30px; height: 30px; border-radius: 9px; border: 2px solid rgba(255,255,255,0.35); background: transparent; color: #fff; flex: none; font-size: 15px; font-weight: 900; cursor: pointer; padding: 0; }
+  #offline .top { text-align: center; margin-bottom: 18px; }
+  #offline .ico { font-size: 44px; }
+  #offline h1 { font-size: 22px; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.02em; }
+  #offline p { margin: 0; color: rgba(255,255,255,0.74); font-size: 14px; }
+  #offline .ult { color: #fbbf24; font-size: 13px; font-weight: 700; margin-top: 8px; }
+  #offline button { background: #fbbf24; color: #1a1208; border: 0; border-radius: 999px; padding: 13px 30px; font-size: 15px; font-weight: 800; font-family: inherit; margin: 10px auto 0; display: block; }
+  #offline button:disabled { opacity: 0.6; }
+  #offline h2 { font-size: 15px; margin: 22px 0 8px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  #offline h2 .dot { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+  .dot.heb { background: #b8503f; } .dot.costco { background: #2f5d8a; }
+  #offline h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.12em; color: #9aa4b8; margin: 12px 0 6px; font-weight: 700; }
+  .row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 10px 12px; margin-bottom: 6px; }
+  .row .cb { width: 22px; height: 22px; border-radius: 7px; border: 2px solid rgba(255,255,255,0.35); flex: none; display: grid; place-items: center; font-size: 13px; font-weight: 900; }
   .row.on .cb { background: #3f9b6a; border-color: #3f9b6a; }
-  .row .t { flex: 1; font-weight: 700; min-width: 0; overflow-wrap: anywhere; text-align: left; background: none; border: 0; color: inherit; font-family: inherit; font-size: 14.5px; padding: 0; cursor: pointer; }
-  .row .t small { display: block; font-weight: 400; font-size: 11.5px; color: #9aa4b8; }
   .row.on .t { text-decoration: line-through; color: #9aa4b8; }
-  .qty { display: inline-flex; align-items: center; background: rgba(255,255,255,0.12); border-radius: 999px; flex: none; }
-  .qty button { width: 30px; height: 30px; border: 0; background: transparent; color: #fff; font-size: 17px; font-weight: 800; font-family: inherit; border-radius: 50%; cursor: pointer; padding: 0; }
-  .qty b { min-width: 34px; text-align: center; font-size: 13px; color: #fbbf24; }
-  .row .x { width: 30px; height: 30px; border: 0; background: transparent; color: #9aa4b8; font-size: 15px; font-family: inherit; border-radius: 50%; flex: none; cursor: pointer; padding: 0; }
-  .addrow { display: flex; gap: 8px; margin-top: 10px; }
-  .addrow input { flex: 1; min-width: 0; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #fff; border-radius: 12px; padding: 10px 12px; font: inherit; font-size: 16px; }
-  .addrow input::placeholder { color: #9aa4b8; }
-  .addrow button, .fin { background: rgba(255,255,255,0.14); color: #fff; border: 0; border-radius: 12px; padding: 10px 16px; font: inherit; font-weight: 700; cursor: pointer; }
-  .fin { display: block; width: 100%; margin-top: 10px; background: #fbbf24; color: #1a1208; font-weight: 800; padding: 12px; }
-  .fin:disabled { opacity: 0.45; }
+  .row .t { flex: 1; font-weight: 700; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .q { color: #fbbf24; font-weight: 800; font-size: 13px; }
   .vacio { color: #9aa4b8; font-size: 13.5px; }
 </style>
 </head>
@@ -58,12 +45,11 @@
   <div class="top">
     <div class="ico">📡</div>
     <h1>Sin conexión</h1>
-    <p>Esta es tu lista tal como quedó. Puedes seguir marcando y agregando: lo que cambies se guarda en el teléfono y se aplica solo cuando vuelva el internet.</p>
+    <p>Para marcar o cambiar cosas hace falta internet. Mientras, aquí está la lista tal como quedó la última vez.</p>
     <div class="ult" id="ult"></div>
     <button type="button" id="retry">Reintentar</button>
   </div>
-  <div class="pend" id="pend" hidden></div>
-  <div id="listas"><div class="vacio" style="text-align:center">Sin listas guardadas todavía. Abre la app con internet una vez.</div></div>
+  <div id="listas"><div class="vacio">Sin listas guardadas todavía. Abre la app con internet una vez.</div></div>
 </div>
 
 <script>
@@ -73,150 +59,50 @@
   var panel = document.getElementById('offline');
   var btn = document.getElementById('retry');
   var ult = document.getElementById('ult');
-  var cajaListas = document.getElementById('listas');
-  var cajaPend = document.getElementById('pend');
-  var vivo = false, appWin = null, enviando = false;
+  var vivo = false;
+  var appWin = null;
 
   function guardar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function leer(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
-  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function fmt(n) { n = Number(n) || 0; return String(Math.round(n * 100) / 100); }
-  function hoyIso() { var d = new Date(), p = function (x) { return String(x).padStart(2, '0'); }; return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); }
 
-  /* ---------- Lo que se guarda en el teléfono ---------- */
-  var R = leer('ld_resumen');                 // última foto de las listas
-  function salvar() { guardar('ld_resumen', R); }
-  function cola() { return leer('ld_cola') || []; }
-  function guardarCola(c) { guardar('ld_cola', c); }
-  // Cada cambio hecho sin internet se apunta aquí y se aplica tal cual, en orden, al reconectar.
-  function encolar(op) {
-    var c = cola();
-    op.id = 'op_' + Date.now() + '_' + Math.random().toString(16).slice(2, 8);
-    c.push(op); guardarCola(c); pintarPend();
-  }
-  function listaDe(tid) { return R && R.listas ? R.listas.filter(function (l) { return l.tienda === tid; })[0] : null; }
-  function itemDe(tid, id) { var l = listaDe(tid); return l ? l.items.filter(function (i) { return i.id === id; })[0] : null; }
-
-  /* ---------- Acciones sin internet ---------- */
-  function marcar(tid, id) {
-    var it = itemDe(tid, id); if (!it) return;
-    it.listo = !it.listo; salvar(); encolar({ fn: 'updateLista', args: [id, { listo: it.listo }] }); pintar();
-  }
-  function cantidad(tid, id, dir) {
-    var it = itemDe(tid, id); if (!it) return;
-    var paso = Number(it.paso) || 1;
-    it.cantidad = Math.max(paso, Math.round(((Number(it.cantidad) || paso) + dir * paso) * 100) / 100);
-    salvar(); encolar({ fn: 'updateLista', args: [id, { cantidad: it.cantidad }] }); pintar();
-  }
-  function quitar(tid, id) {
-    var it = itemDe(tid, id); if (!it) return;
-    if (!confirm('¿Quitar «' + it.nombre + '» de la lista?')) return;
-    var l = listaDe(tid); l.items = l.items.filter(function (i) { return i.id !== id; }); salvar();
-    var c = cola(), creada = c.filter(function (o) { return o.tmp === id; })[0];
-    // Si se había agregado aquí mismo y todavía no sube, basta con borrar ese apunte
-    if (creada) { guardarCola(c.filter(function (o) { return o.tmp !== id && !(o.args || []).some(function (a) { return a === id; }); })); pintarPend(); }
-    else encolar({ fn: 'removeLista', args: [id] });
-    pintar();
-  }
-  function agregar(tid, nombre) {
-    nombre = String(nombre || '').trim(); if (!nombre) return;
-    var l = listaDe(tid); if (!l) return;
-    var tmp = 'tmp_' + Date.now() + '_' + Math.random().toString(16).slice(2, 6);
-    l.items.push({ id: tmp, nombre: nombre, cantidad: 1, listo: false, categoria: 'Otros', unidad: '', paso: 1, unica: true });
-    salvar(); encolar({ fn: 'agregarRapido', args: [nombre, tid], tmp: tmp }); pintar();
-  }
-  function terminar(tid) {
-    var l = listaDe(tid); if (!l) return;
-    var marcados = l.items.filter(function (i) { return i.listo; });
-    if (!marcados.length) return;
-    if (!confirm(marcados.length + (marcados.length === 1 ? ' producto marcado pasa' : ' productos marcados pasan') + ' al historial cuando vuelva el internet. ¿Terminar la compra?')) return;
-    encolar({ fn: 'terminarCompra', args: [tid, hoyIso(), ''] });
-    l.items = l.items.filter(function (i) { return !i.listo; }); salvar(); pintar();
-  }
-
-  /* ---------- Pintado ---------- */
-  function textoUltimo() {
-    var t = Number(leer('ld_ultimoAcceso')) || 0;
-    if (!t) return 'Aún no has abierto la app en este dispositivo.';
-    var min = Math.round((Date.now() - t) / 60000);
-    if (min < 1) return 'Datos de hace un momento';
-    if (min < 60) return 'Datos de hace ' + min + ' min';
-    var hrs = Math.round(min / 60);
-    if (hrs < 24) return 'Datos de hace ' + hrs + (hrs === 1 ? ' hora' : ' horas');
-    var d = new Date(t);
-    return 'Datos del ' + d.toLocaleDateString('es-MX') + ' a las ' + d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
-  }
-  function pintarPend() {
-    var n = cola().length;
-    cajaPend.hidden = !n;
-    cajaPend.textContent = n ? (n === 1 ? '1 cambio guardado aquí; se aplica solo al volver el internet' : n + ' cambios guardados aquí; se aplican solos al volver el internet') : '';
-  }
-  function filaHtml(tid, it, conCant) {
-    var u = it.unidad ? ' ' + esc(it.unidad) : '';
-    return '<div class="row' + (it.listo ? ' on' : '') + '">' +
-      '<button class="cb" data-act="marcar" data-t="' + esc(tid) + '" data-id="' + esc(it.id) + '" aria-label="Marcar">' + (it.listo ? '✓' : '') + '</button>' +
-      '<button class="t" data-act="marcar" data-t="' + esc(tid) + '" data-id="' + esc(it.id) + '">' + esc(it.nombre) + (it.unica ? '<small>Solo esta vez</small>' : '') + '</button>' +
-      (conCant ? '<span class="qty"><button data-act="menos" data-t="' + esc(tid) + '" data-id="' + esc(it.id) + '" aria-label="Menos">−</button><b>' + fmt(it.cantidad) + u + '</b><button data-act="mas" data-t="' + esc(tid) + '" data-id="' + esc(it.id) + '" aria-label="Más">+</button></span>' : '') +
-      '<button class="x" data-act="quitar" data-t="' + esc(tid) + '" data-id="' + esc(it.id) + '" aria-label="Quitar">✕</button></div>';
-  }
-  function pintar() {
-    ult.textContent = textoUltimo();
-    pintarPend();
-    if (!R || !R.listas || !R.listas.length) return;
-    cajaListas.innerHTML = R.listas.map(function (l) {
-      var conCant = l.cantidades !== false;
-      var h = '<section><h2><span class="dot" style="background:' + esc(/^#[0-9a-fA-F]{6}$/.test(l.color || '') ? l.color : '#b8503f') + '"></span>' + esc(l.nombre) + '</h2>';
-      var pend = l.items.filter(function (i) { return !i.listo; });
-      var listos = l.items.filter(function (i) { return i.listo; });
-      if (!l.items.length) h += '<div class="vacio">Lista vacía.</div>';
-      var cat = '';
-      pend.forEach(function (it) {
-        if (it.categoria && it.categoria !== cat) { cat = it.categoria; h += '<h3>' + esc(cat) + '</h3>'; }
-        h += filaHtml(l.tienda, it, conCant);
-      });
-      if (listos.length) { h += '<h3>En el carrito</h3>'; listos.forEach(function (it) { h += filaHtml(l.tienda, it, conCant); }); }
-      h += '<div class="addrow"><input type="text" placeholder="Agregar algo…" data-add="' + esc(l.tienda) + '" autocomplete="off" enterkeyhint="done"><button data-act="agregar" data-t="' + esc(l.tienda) + '">Añadir</button></div>';
-      h += '<button class="fin" data-act="terminar" data-t="' + esc(l.tienda) + '"' + (listos.length ? '' : ' disabled') + '>Terminar compra' + (listos.length ? ' (' + listos.length + ')' : '') + '</button>';
-      return h + '</section>';
-    }).join('');
-  }
-
-  cajaListas.addEventListener('click', function (e) {
-    var el = e.target.closest('[data-act]'); if (!el) return;
-    var act = el.dataset.act, tid = el.dataset.t, id = el.dataset.id;
-    if (act === 'marcar') marcar(tid, id);
-    else if (act === 'mas') cantidad(tid, id, 1);
-    else if (act === 'menos') cantidad(tid, id, -1);
-    else if (act === 'quitar') quitar(tid, id);
-    else if (act === 'terminar') terminar(tid);
-    else if (act === 'agregar') { var inp = cajaListas.querySelector('[data-add="' + tid + '"]'); if (inp) { agregar(tid, inp.value); inp.value = ''; } }
-  });
-  cajaListas.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' && e.target.dataset && e.target.dataset.add) { e.preventDefault(); agregar(e.target.dataset.add, e.target.value); e.target.value = ''; }
-  });
-
-  /* ---------- Puente con la app ---------- */
-  function mandarCola() {
-    var c = cola();
-    if (!c.length || !appWin || enviando) return;
-    enviando = true;
-    try { appWin.postMessage({ app: 'despensa-shell', tipo: 'cola', ops: c }, '*'); } catch (e) { enviando = false; }
-  }
+  /* La app avisa quién es y manda un resumen de las listas para verlas sin red. */
   window.addEventListener('message', function (ev) {
     var m = ev.data;
     if (!m || m.app !== 'despensa') return;
     if (ev.source) appWin = ev.source;
-    if (m.tipo === 'hola') { vivo = true; guardar('ld_ultimoAcceso', Date.now()); ocultar(); mandarCola(); }
-    else if (m.tipo === 'resumen') { R = m.data; salvar(); }
-    else if (m.tipo === 'cola-ok') {
-      var hechas = m.ids || [];
-      guardarCola(cola().filter(function (o) { return hechas.indexOf(o.id) < 0; }));
-      enviando = false; pintarPend();
-    }
+    if (m.tipo === 'hola') { vivo = true; guardar('ld_ultimoAcceso', Date.now()); ocultar(); }
+    else if (m.tipo === 'resumen') guardar('ld_resumen', m.data);
   });
 
-  function mostrar() { pintar(); panel.classList.add('on'); }
+  function textoUltimo() {
+    var t = Number(leer('ld_ultimoAcceso')) || 0;
+    if (!t) return 'Aún no has abierto la app en este dispositivo.';
+    var min = Math.round((Date.now() - t) / 60000);
+    if (min < 1) return 'Último acceso: hace un momento';
+    if (min < 60) return 'Último acceso: hace ' + min + ' min';
+    var hrs = Math.round(min / 60);
+    if (hrs < 24) return 'Último acceso: hace ' + hrs + (hrs === 1 ? ' hora' : ' horas');
+    var d = new Date(t);
+    return 'Último acceso: ' + d.toLocaleDateString('es-MX') + ' a las ' + d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function pintarOffline() {
+    ult.textContent = textoUltimo();
+    var r = leer('ld_resumen'); var box = document.getElementById('listas');
+    if (!r || !r.listas) return;
+    box.innerHTML = r.listas.map(function (l) {
+      var h = '<h2><span class="dot" style="background:' + esc(/^#[0-9a-fA-F]{6}
+.test(l.color || '') ? l.color : '#b8503f') + '"></span>' + esc(l.nombre) + '</h2>';
+      if (!l.items.length) return h + '<div class="vacio">Lista vacía.</div>';
+      var cat = '';
+      l.items.sort(function (a, b) { return (a.listo ? 1 : 0) - (b.listo ? 1 : 0) || String(a.categoria).localeCompare(String(b.categoria)); });
+      l.items.forEach(function (it) { if (!it.listo && it.categoria !== cat) { cat = it.categoria; h += '<h3>' + esc(cat) + '</h3>'; } h += '<div class="row' + (it.listo ? ' on' : '') + '"><span class="cb">' + (it.listo ? '✓' : '') + '</span><span class="t">' + esc(it.nombre) + '</span><span class="q">× ' + esc(it.cantidad || 1) + '</span></div>'; });
+      return h;
+    }).join('');
+  }
+  function mostrar() { pintarOffline(); panel.classList.add('on'); }
   function ocultar() { panel.classList.remove('on'); }
+
   function probar() {
     if (!navigator.onLine) { mostrar(); return; }
     fetch(EXEC, { mode: 'no-cors', cache: 'no-store' })
@@ -230,7 +116,6 @@
     marco.src = EXEC + '?r=' + Date.now();
     setTimeout(function () { probar(); btn.disabled = false; btn.textContent = 'Reintentar'; }, 2500);
   });
-  pintar();
   probar();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 })();
